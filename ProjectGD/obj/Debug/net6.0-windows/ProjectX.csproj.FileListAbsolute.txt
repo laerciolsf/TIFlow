@@ -207,3 +207,5 @@ D:\ProjetoSENAI\ProjectGD\obj\Debug\net6.0-windows\ProjectX.pdb
 D:\ProjetoSENAI\ProjectGD\obj\Debug\net6.0-windows\ProjectX.genruntimeconfig.cache
 D:\ProjetoSENAI\ProjectGD\obj\Debug\net6.0-windows\ref\ProjectX.dll
 D:\ProjetoSENAI\ProjectGD\obj\Debug\net6.0-windows\ProjectX.view.FLogin.resources
+D:\ProjetoSENAI\ProjectGD\obj\Debug\net6.0-windows\ProjectX.view.FChamado.resources
+D:\ProjetoSENAI\ProjectGD\obj\Debug\net6.0-windows\ProjectX.view.FCadastroChamado.resources

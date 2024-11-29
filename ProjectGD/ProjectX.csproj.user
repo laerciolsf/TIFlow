@@ -4,6 +4,12 @@
     <Compile Update="FMenu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="view\FCadastroChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\FChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="view\FLogin.cs">
       <SubType>Form</SubType>
     </Compile>

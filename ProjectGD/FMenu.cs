@@ -95,7 +95,8 @@ namespace ProjectX
 
         private void BAdicionar_Click(object sender, EventArgs e)
         {
-            // Botão adicionar
+            FChamado tela = new FChamado();
+            tela.ShowDialog();
         }
 
         private void textBoxAdicionar_TextChanged(object sender, EventArgs e)
