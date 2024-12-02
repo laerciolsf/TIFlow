@@ -46,39 +46,28 @@ namespace ProjectX
 
         private void rToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // Se necessário, implementar alguma ação
         }
-
-
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // Se necessário, implementar alguma ação
         }
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // Se necessário, implementar alguma ação
         }
-
-
-
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // Se necessário, implementar alguma ação
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
+            // Se necessário, implementar alguma ação
         }
-
-
-
-
-
-
 
         private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -86,18 +75,15 @@ namespace ProjectX
             tela.ShowDialog();
         }
 
-
-
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //aba usuarios
+            // Se necessário, implementar alguma ação
         }
 
+        // Método que lida com o clique no botão de adicionar grupo
         private void BAdicionar_Click(object sender, EventArgs e)
         {
-           
-
-            // Captura o texto da caixa de texto
+            // Captura o texto da caixa de texto para o título do grupo
             string titulo = textBoxAdicionar.Text;
 
             if (string.IsNullOrEmpty(titulo))
@@ -106,17 +92,17 @@ namespace ProjectX
                 return;
             }
 
-            // Chama o controlador para salvar o título no banco
+            // Chama o controlador para salvar o título no banco e retorna o ID do grupo
             GrupoChamadoController grupoController = new GrupoChamadoController();
+            int idGrupoChamado = grupoController.AdicionarGrupo(titulo);
 
-            bool sucesso = grupoController.AdicionarGrupo(titulo);
-
-            if (sucesso)
+            if (idGrupoChamado > 0)
             {
                 MessageBox.Show("Grupo adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBoxAdicionar.Clear(); // Limpa a caixa de texto
 
-                FChamado tela = new FChamado();
+                // Abre o formulário FChamado passando o ID do grupo
+                FChamado tela = new FChamado(idGrupoChamado);
                 tela.ShowDialog();
             }
             else
@@ -127,13 +113,12 @@ namespace ProjectX
 
         private void textBoxAdicionar_TextChanged(object sender, EventArgs e)
         {
-            // Caixa de texto
+            // Se necessário, implementar alguma ação
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // data grid view
+            // Se necessário, implementar alguma ação
         }
     }
-
 }

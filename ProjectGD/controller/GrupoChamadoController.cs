@@ -12,7 +12,7 @@ namespace ProjectX.controller
 {
     public class GrupoChamadoController
     {
-        public bool AdicionarGrupo(string titulo)
+        public int AdicionarGrupo(string titulo)
         {
             try
             {
@@ -22,27 +22,28 @@ namespace ProjectX.controller
                 {
                     conexao.Open(); // Abre a conexão com o banco de dados
 
-                    // Comando SQL para inserir o título
-                    string query = "INSERT INTO grupo_chamados (Titulo) VALUES (@Titulo)";
+                    // Comando SQL para inserir o grupo e pegar o ID gerado
+                    string query = "INSERT INTO grupo_chamados (Titulo) VALUES (@Titulo); SELECT LAST_INSERT_ID();";
 
                     using (MySqlCommand comando = new MySqlCommand(query, conexao))
                     {
                         // Adiciona o parâmetro para evitar SQL Injection
                         comando.Parameters.AddWithValue("@Titulo", titulo);
-                        comando.ExecuteNonQuery(); // Executa o comando SQL
+
+                        // Executa o comando e retorna o ID gerado
+                        int idGerado = Convert.ToInt32(comando.ExecuteScalar());
+                        return idGerado; // Retorna o ID do novo grupo
                     }
                 }
-
-                return true; // Indica sucesso
             }
             catch (Exception ex)
             {
                 // Log ou exibição de erros
                 Console.WriteLine($"Erro ao adicionar grupo: {ex.Message}");
-                return false; // Indica falha
+                MessageBox.Show($"Erro ao adicionar grupo: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1; // Retorna -1 em caso de falha
             }
         }
     }
 }
-
 

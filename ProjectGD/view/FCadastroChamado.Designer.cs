@@ -45,6 +45,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(170, 23);
             textBox1.TabIndex = 0;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -52,6 +53,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(163, 23);
             textBox2.TabIndex = 1;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox3
             // 
@@ -59,6 +61,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(362, 23);
             textBox3.TabIndex = 2;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label1
             // 
@@ -95,6 +98,7 @@
             buttonEditar.TabIndex = 6;
             buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = true;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonExcluir
             // 
@@ -104,6 +108,7 @@
             buttonExcluir.TabIndex = 7;
             buttonExcluir.Text = "Excluir";
             buttonExcluir.UseVisualStyleBackColor = true;
+            buttonExcluir.Click += buttonExcluir_Click;
             // 
             // buttonSalvar
             // 
@@ -113,6 +118,7 @@
             buttonSalvar.TabIndex = 8;
             buttonSalvar.Text = "Salvar";
             buttonSalvar.UseVisualStyleBackColor = true;
+            buttonSalvar.Click += buttonSalvar_Click;
             // 
             // FCadastroChamado
             // 
@@ -130,6 +136,7 @@
             Controls.Add(textBox1);
             Name = "FCadastroChamado";
             Text = "FCadastroChamado";
+            Load += FCadastroChamado_Load;
             ResumeLayout(false);
             PerformLayout();
         }

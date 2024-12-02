@@ -102,6 +102,7 @@
             Controls.Add(dataGridView1);
             Name = "FChamado";
             Text = "FChamado";
+            Load += FChamado_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
