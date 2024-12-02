@@ -95,13 +95,44 @@ namespace ProjectX
 
         private void BAdicionar_Click(object sender, EventArgs e)
         {
-            FChamado tela = new FChamado();
-            tela.ShowDialog();
+           
+
+            // Captura o texto da caixa de texto
+            string titulo = textBoxAdicionar.Text;
+
+            if (string.IsNullOrEmpty(titulo))
+            {
+                MessageBox.Show("O título não pode estar vazio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Chama o controlador para salvar o título no banco
+            GrupoChamadoController grupoController = new GrupoChamadoController();
+
+            bool sucesso = grupoController.AdicionarGrupo(titulo);
+
+            if (sucesso)
+            {
+                MessageBox.Show("Grupo adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBoxAdicionar.Clear(); // Limpa a caixa de texto
+
+                FChamado tela = new FChamado();
+                tela.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao adicionar o grupo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textBoxAdicionar_TextChanged(object sender, EventArgs e)
         {
             // Caixa de texto
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // data grid view
         }
     }
 

@@ -32,14 +32,14 @@
             usuariosToolStripMenuItem = new ToolStripMenuItem();
             cadastrarToolStripMenuItem = new ToolStripMenuItem();
             usuarioToolStripMenuItem1 = new ToolStripMenuItem();
+            configuraçõesToolStripMenuItem = new ToolStripMenuItem();
+            alterarMinhaSenhaToolStripMenuItem = new ToolStripMenuItem();
+            ajudaToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             BAdicionar = new Button();
             textBoxAdicionar = new TextBox();
-            configuraçõesToolStripMenuItem = new ToolStripMenuItem();
-            alterarMinhaSenhaToolStripMenuItem = new ToolStripMenuItem();
-            ajudaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -68,7 +68,7 @@
             // 
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuarioToolStripMenuItem1 });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarToolStripMenuItem.Size = new Size(124, 22);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // usuarioToolStripMenuItem1
@@ -77,6 +77,25 @@
             usuarioToolStripMenuItem1.Size = new Size(114, 22);
             usuarioToolStripMenuItem1.Text = "Usuario";
             usuarioToolStripMenuItem1.Click += usuarioToolStripMenuItem1_Click;
+            // 
+            // configuraçõesToolStripMenuItem
+            // 
+            configuraçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alterarMinhaSenhaToolStripMenuItem });
+            configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            configuraçõesToolStripMenuItem.Size = new Size(96, 20);
+            configuraçõesToolStripMenuItem.Text = "Configurações";
+            // 
+            // alterarMinhaSenhaToolStripMenuItem
+            // 
+            alterarMinhaSenhaToolStripMenuItem.Name = "alterarMinhaSenhaToolStripMenuItem";
+            alterarMinhaSenhaToolStripMenuItem.Size = new Size(181, 22);
+            alterarMinhaSenhaToolStripMenuItem.Text = "Alterar Minha Senha";
+            // 
+            // ajudaToolStripMenuItem
+            // 
+            ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+            ajudaToolStripMenuItem.Size = new Size(50, 20);
+            ajudaToolStripMenuItem.Text = "Ajuda";
             // 
             // panel1
             // 
@@ -109,6 +128,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(792, 319);
             dataGridView1.TabIndex = 59;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // BAdicionar
             // 
@@ -127,25 +147,6 @@
             textBoxAdicionar.Size = new Size(238, 23);
             textBoxAdicionar.TabIndex = 62;
             textBoxAdicionar.TextChanged += textBoxAdicionar_TextChanged;
-            // 
-            // configuraçõesToolStripMenuItem
-            // 
-            configuraçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { alterarMinhaSenhaToolStripMenuItem });
-            configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            configuraçõesToolStripMenuItem.Size = new Size(96, 20);
-            configuraçõesToolStripMenuItem.Text = "Configurações";
-            // 
-            // alterarMinhaSenhaToolStripMenuItem
-            // 
-            alterarMinhaSenhaToolStripMenuItem.Name = "alterarMinhaSenhaToolStripMenuItem";
-            alterarMinhaSenhaToolStripMenuItem.Size = new Size(181, 22);
-            alterarMinhaSenhaToolStripMenuItem.Text = "Alterar Minha Senha";
-            // 
-            // ajudaToolStripMenuItem
-            // 
-            ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            ajudaToolStripMenuItem.Size = new Size(50, 20);
-            ajudaToolStripMenuItem.Text = "Ajuda";
             // 
             // FMenu
             // 
