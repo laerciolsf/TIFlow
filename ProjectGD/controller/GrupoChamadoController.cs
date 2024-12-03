@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using MySql.Data.MySqlClient;
 using System;
-using System.Data.SqlClient;
-using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 namespace ProjectX.controller
 {
@@ -16,34 +10,67 @@ namespace ProjectX.controller
         {
             try
             {
-                // Cria uma instância da classe de conexão
                 conn conexaoDB = new conn();
                 using (MySqlConnection conexao = conexaoDB.GetConnection())
                 {
-                    conexao.Open(); // Abre a conexão com o banco de dados
-
-                    // Comando SQL para inserir o grupo e pegar o ID gerado
-                    string query = "INSERT INTO grupo_chamados (Titulo) VALUES (@Titulo); SELECT LAST_INSERT_ID();";
+                    conexao.Open();
+                    string query = "INSERT INTO grupo_chamados (titulo) VALUES (@Titulo); SELECT LAST_INSERT_ID();";
 
                     using (MySqlCommand comando = new MySqlCommand(query, conexao))
                     {
-                        // Adiciona o parâmetro para evitar SQL Injection
                         comando.Parameters.AddWithValue("@Titulo", titulo);
 
-                        // Executa o comando e retorna o ID gerado
-                        int idGerado = Convert.ToInt32(comando.ExecuteScalar());
-                        return idGerado; // Retorna o ID do novo grupo
+                        return Convert.ToInt32(comando.ExecuteScalar());
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Log ou exibição de erros
                 Console.WriteLine($"Erro ao adicionar grupo: {ex.Message}");
-                MessageBox.Show($"Erro ao adicionar grupo: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return -1; // Retorna -1 em caso de falha
+                return -1;
             }
         }
+
+        public List<GrupoChamado> ObterTodosGrupos()
+        {
+            List<GrupoChamado> grupos = new List<GrupoChamado>();
+
+            try
+            {
+                conn conexaoDB = new conn();
+                using (MySqlConnection conexao = conexaoDB.GetConnection())
+                {
+                    conexao.Open();
+                    string query = "SELECT id, titulo FROM grupo_chamados";
+
+                    using (MySqlCommand comando = new MySqlCommand(query, conexao))
+                    {
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                grupos.Add(new GrupoChamado
+                                {
+                                    Id = reader.GetInt32("id"),
+                                    Titulo = reader.GetString("titulo")
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao obter grupos: {ex.Message}");
+            }
+
+            return grupos;
+        }
+    }
+
+    public class GrupoChamado
+    {
+        public int Id { get; set; }
+        public string Titulo { get; set; }
     }
 }
-

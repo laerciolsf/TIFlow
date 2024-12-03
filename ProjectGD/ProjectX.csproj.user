@@ -7,7 +7,7 @@
     <Compile Update="view\FCadastroChamado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\FChamado.cs">
+    <Compile Update="view\FGrupoChamado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\FLogin.cs">

@@ -6,6 +6,7 @@ namespace ProjectX.view
 {
     public partial class FCadastroChamado : Form
     {
+
         private int idGrupoChamado; // ID do grupo de chamados recebido
 
         // Construtor que recebe o ID do grupo de chamados
