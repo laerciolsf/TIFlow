@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace ProjectX.controller
 {
     public class ChamadoController
@@ -93,6 +91,52 @@ namespace ProjectX.controller
             }
 
             return chamados;
+        }
+
+        // Método para buscar um chamado específico por ID
+        public Chamado ObterChamadoPorId(int idChamado)
+        {
+            Chamado chamado = null;
+
+            try
+            {
+                // Cria uma instância da classe de conexão
+                conn conexaoDB = new conn();
+                using (MySqlConnection conexao = conexaoDB.GetConnection())
+                {
+                    conexao.Open(); // Abre a conexão com o banco de dados
+
+                    // Comando SQL para recuperar o chamado específico
+                    string query = "SELECT id, hora_inicio, hora_final, descricao FROM Chamados WHERE id = @idChamado";
+
+                    using (MySqlCommand comando = new MySqlCommand(query, conexao))
+                    {
+                        comando.Parameters.AddWithValue("@idChamado", idChamado);
+
+                        // Executa a consulta e lê o resultado
+                        using (MySqlDataReader reader = comando.ExecuteReader())
+                        {
+                            if (reader.Read()) // Se encontrar o chamado com o ID fornecido
+                            {
+                                chamado = new Chamado
+                                {
+                                    Id = reader.GetInt32("id"),
+                                    HoraInicio = reader.GetTimeSpan("hora_inicio"),
+                                    HoraFinal = reader.GetTimeSpan("hora_final"),
+                                    Descricao = reader.GetString("descricao")
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Exibe erro caso algo dê errado
+                Console.WriteLine($"Erro ao obter chamado por ID: {ex.Message}");
+            }
+
+            return chamado;
         }
     }
 

@@ -6,6 +6,47 @@ namespace ProjectX.view
 {
     public partial class FCadastroChamado : Form
     {
+        private int? idChamado; // Adiciona uma variável para armazenar o ID do chamado (pode ser nulo)
+
+        // Construtor para criar um novo chamado
+        
+
+        // Construtor para editar um chamado existente
+        public FCadastroChamado(int idGrupoChamado, int idChamado)
+        {
+            InitializeComponent();
+            this.idGrupoChamado = idGrupoChamado;
+            this.idChamado = idChamado;
+
+            // Carrega os dados do chamado no formulário
+            CarregarDadosChamado();
+        }
+
+        // Método para carregar os dados do chamado no formulário
+        private void CarregarDadosChamado()
+        {
+            if (idChamado.HasValue)
+            {
+                ChamadoController chamadoController = new ChamadoController();
+                var chamado = chamadoController.ObterChamadoPorId(idChamado.Value);
+
+                if (chamado != null)
+                {
+                    textBox1.Text = chamado.HoraInicio.ToString();
+                    textBox2.Text = chamado.HoraFinal.ToString();
+                    textBox3.Text = chamado.Descricao;
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao carregar os dados do chamado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+
+
+
 
         private int idGrupoChamado; // ID do grupo de chamados recebido
 

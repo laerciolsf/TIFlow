@@ -71,14 +71,18 @@ namespace ProjectX.view
         // Evento de clique na célula da DataGridView
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verifica se o clique foi na célula de dados (não cabeçalhos)
+            // Verifica se o clique foi na célula de dados (não no cabeçalho)
             if (e.RowIndex >= 0)
             {
-                // Pega o ID do chamado da linha clicada
+                // Obtém o ID do chamado da linha clicada
                 int idChamado = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
 
-                // Exemplo: Aqui você pode abrir a tela de edição do chamado ou realizar outras ações
-                MessageBox.Show($"Chamado ID: {idChamado} selecionado.");
+                // Abre a tela de edição do chamado
+                FCadastroChamado tela = new FCadastroChamado(idGrupoChamado, idChamado);
+                tela.ShowDialog();
+
+                // Recarrega os chamados após a edição
+                CarregarChamados();
             }
         }
     }
