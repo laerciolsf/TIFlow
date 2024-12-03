@@ -33,7 +33,7 @@ CREATE TABLE `chamados` (
   PRIMARY KEY (`id`),
   KEY `fk_chamados_grupo` (`id_grupo_chamado`),
   CONSTRAINT `fk_chamados_grupo` FOREIGN KEY (`id_grupo_chamado`) REFERENCES `grupo_chamados` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `chamados` (
 
 LOCK TABLES `chamados` WRITE;
 /*!40000 ALTER TABLE `chamados` DISABLE KEYS */;
+INSERT INTO `chamados` VALUES (1,'24:00:00','24:00:00','fdasfdsfasdf',2),(2,'24:00:00','48:00:00','teste chamdo 1',3),(3,'72:00:00','96:00:00','teste chamdo 2',3),(4,'120:00:00','120:00:00','não estou suportando mais',4),(5,'48:00:00','72:00:00','Pelo amor de deus funcione',5),(6,'96:00:00','96:00:00','socorro',6),(7,'12:00:00','15:00:00','Teste 40569',6),(8,'09:30:00','10:00:00','socorro',7),(9,'10:00:00','11:59:00','Montar PC info 01',7),(10,'13:30:00','14:50:00','abadabadu',8),(11,'168:00:00','192:00:00','sdfgsdfgs',9),(12,'240:00:00','264:00:00',' zvdavcsdac',9),(13,'09:45:00','17:46:00','Arrumar NVR',10),(14,'08:00:00','08:45:00','Configurar o ramal do Adriando',10),(15,'08:00:00','09:00:00','Internet lenta',11),(16,'08:00:00','08:40:00','Problemas de login no SESI',12),(17,'09:00:00','11:00:00','Portabilidade de telefonia',12),(18,'08:00:00','08:45:00','Configurar o ramal do Adriano',10),(19,'12:00:00','13:45:00','Rede 02 Caiu',13),(20,'13:34:00','14:00:00','Computador não liga',13),(21,'08:00:00','09:50:00','rede 02',15),(22,'10:00:00','12:00:00','fiz nada',15),(23,'10:00:00','12:00:00','fiz tudo',15);
 /*!40000 ALTER TABLE `chamados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,9 +57,9 @@ CREATE TABLE `grupo_chamados` (
   `id` int NOT NULL AUTO_INCREMENT,
   `titulo` varchar(45) NOT NULL,
   `qtde_chamados` int DEFAULT NULL,
-  `qtde_tempo` time DEFAULT NULL,
+  `qtde_tempo` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,6 +68,7 @@ CREATE TABLE `grupo_chamados` (
 
 LOCK TABLES `grupo_chamados` WRITE;
 /*!40000 ALTER TABLE `grupo_chamados` DISABLE KEYS */;
+INSERT INTO `grupo_chamados` VALUES (1,'teste01',NULL,NULL),(2,'teste',NULL,NULL),(3,'teste 3699',NULL,NULL),(4,'teste 1 bilhao',NULL,NULL),(5,'teste 99494944949',NULL,NULL),(6,'teste um zilhão',NULL,NULL),(7,'teste q se DEUS quiser vai da certo',NULL,NULL),(8,'123',NULL,NULL),(9,'abc',NULL,NULL),(10,'teste do juizo final',NULL,NULL),(11,'test',NULL,NULL),(12,'03/12/24',NULL,NULL),(13,'04/08/2024',NULL,NULL),(14,'03/12/2025',NULL,NULL),(15,'03/12/2024',NULL,NULL);
 /*!40000 ALTER TABLE `grupo_chamados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-27  2:01:22
+-- Dump completed on 2024-12-03 11:51:56
