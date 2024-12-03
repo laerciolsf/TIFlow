@@ -94,7 +94,7 @@
             MinimizeBox = false;
             Name = "FLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "RespoView";
+            Text = "TIFlow";
             Load += FLogin_Load;
             ResumeLayout(false);
             PerformLayout();

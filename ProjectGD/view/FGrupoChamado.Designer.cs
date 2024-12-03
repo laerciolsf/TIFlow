@@ -90,7 +90,7 @@
             label2.TabIndex = 5;
             label2.Text = "Chamados Finalizados";
             // 
-            // FChamado
+            // FGrupoChamado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -101,7 +101,11 @@
             Controls.Add(textBoxTempo);
             Controls.Add(buttonAddChamado);
             Controls.Add(dataGridView1);
-            Name = "FChamado";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FGrupoChamado";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FChamado";
             Load += FChamado_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

@@ -34,7 +34,6 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            buttonEditar = new Button();
             buttonExcluir = new Button();
             buttonSalvar = new Button();
             SuspendLayout();
@@ -90,16 +89,6 @@
             label3.TabIndex = 5;
             label3.Text = "Descrição";
             // 
-            // buttonEditar
-            // 
-            buttonEditar.Location = new Point(144, 120);
-            buttonEditar.Name = "buttonEditar";
-            buttonEditar.Size = new Size(106, 23);
-            buttonEditar.TabIndex = 6;
-            buttonEditar.Text = "Editar";
-            buttonEditar.UseVisualStyleBackColor = true;
-            buttonEditar.Click += buttonEditar_Click;
-            // 
             // buttonExcluir
             // 
             buttonExcluir.Location = new Point(12, 120);
@@ -127,14 +116,17 @@
             ClientSize = new Size(387, 162);
             Controls.Add(buttonSalvar);
             Controls.Add(buttonExcluir);
-            Controls.Add(buttonEditar);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FCadastroChamado";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FCadastroChamado";
             Load += FCadastroChamado_Load;
             ResumeLayout(false);
@@ -149,7 +141,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button buttonEditar;
         private Button buttonExcluir;
         private Button buttonSalvar;
     }

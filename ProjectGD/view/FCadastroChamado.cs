@@ -9,7 +9,7 @@ namespace ProjectX.view
         private int? idChamado; // Adiciona uma variável para armazenar o ID do chamado (pode ser nulo)
 
         // Construtor para criar um novo chamado
-        
+
 
         // Construtor para editar um chamado existente
         public FCadastroChamado(int idGrupoChamado, int idChamado)

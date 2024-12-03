@@ -50,7 +50,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { usuariosToolStripMenuItem, configuraçõesToolStripMenuItem, ajudaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(820, 24);
+            menuStrip1.Size = new Size(337, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -105,7 +105,7 @@
             panel1.Location = new Point(0, 24);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(820, 45);
+            panel1.Size = new Size(337, 45);
             panel1.TabIndex = 58;
             // 
             // label1
@@ -113,7 +113,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(18, 14);
+            label1.Location = new Point(40, 11);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(253, 24);
@@ -123,18 +123,18 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 77);
+            dataGridView1.Location = new Point(23, 96);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(792, 319);
+            dataGridView1.Size = new Size(293, 497);
             dataGridView1.TabIndex = 59;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // BAdicionar
             // 
-            BAdicionar.Location = new Point(423, 419);
+            BAdicionar.Location = new Point(201, 617);
             BAdicionar.Name = "BAdicionar";
-            BAdicionar.Size = new Size(153, 23);
+            BAdicionar.Size = new Size(115, 23);
             BAdicionar.TabIndex = 60;
             BAdicionar.Text = "Adicionar ";
             BAdicionar.UseVisualStyleBackColor = true;
@@ -142,9 +142,9 @@
             // 
             // textBoxAdicionar
             // 
-            textBoxAdicionar.Location = new Point(179, 419);
+            textBoxAdicionar.Location = new Point(23, 617);
             textBoxAdicionar.Name = "textBoxAdicionar";
-            textBoxAdicionar.Size = new Size(238, 23);
+            textBoxAdicionar.Size = new Size(153, 23);
             textBoxAdicionar.TabIndex = 62;
             textBoxAdicionar.TextChanged += textBoxAdicionar_TextChanged;
             // 
@@ -152,17 +152,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(820, 458);
+            ClientSize = new Size(337, 652);
             Controls.Add(textBoxAdicionar);
             Controls.Add(BAdicionar);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Name = "FMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = " ";
-            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
